@@ -169,6 +169,7 @@ class Chain extends React.Component {
         <div className="chain">
           {GLOBS.map((glob, index) => (
             <Plob
+            key={glob.text.split(' ').splice(0, 3).join('')+index}
             x={100+200*Math.sin(index*Math.PI/12)}
             y={calcOffset(index)}
             color={glob.color}
@@ -195,14 +196,12 @@ class Chain extends React.Component {
 
 
 // ========================================
-const GlobChain = () => {
-// ReactDOM.render(
-render(
+
+ReactDOM.render(
   <Chain />,
   document.getElementById('root')
 );
-}
-export default GlobChain;
+
 
 
 
